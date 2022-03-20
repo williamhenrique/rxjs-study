@@ -1,4 +1,4 @@
-import { interval } from 'rxjs';
+import { interval, startWith } from 'rxjs';
 import { mapTo, retryWhen, scan, takeWhile } from 'rxjs/operators';
 
 export default () => {
@@ -8,7 +8,8 @@ export default () => {
       scan((acc, cur) => {
         return acc + cur;
       }, 10),
-      takeWhile((value) => value === 0)
+      takeWhile((value) => value > 0),
+      startWith(5)
     )
     .subscribe(console.log);
 };
