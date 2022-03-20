@@ -4,10 +4,10 @@ import create from './creation-operators';
 import operators from './operators';
 import distinct from './distinct';
 import flattening from './flattening-operators';
-import counter from './counter';
+import countDown from './count-down';
 
 console.clear();
-counter();
+countDown();
 // observale();
 // create();
 // unsubscribe();
