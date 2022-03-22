@@ -5,12 +5,14 @@ import operators from './operators';
 import distinct from './distinct';
 import flattening from './flattening-operators';
 import countDown from './count-down';
+import share from './share';
 
 console.clear();
-countDown();
 // observale();
 // create();
 // unsubscribe();
 // operators();
 // distinct();
 // flattening();
+// countDown();
+share();
