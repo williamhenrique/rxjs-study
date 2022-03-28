@@ -1,28 +1,31 @@
 import { delay, Subject } from 'rxjs';
-
+import './style';
 export default () => {
-  const subject = new Subject();
-  subject.subscribe((one) => console.log({ one }));
+  const divLoading = document.createElement('div');
 
-  subject.next('Hello');
+  divLoading.classList.add('loading');
 
-  // setTimeout(() => {
-  //   subject.next('Hello');
-  // }, 2000);
+  document.body.appendChild(divLoading);
 
-  subject.subscribe((two) => console.log({ two }));
+  const loading$ = new Subject();
 
-  subject.next('my');
+  const logicService = {
+    showLoading: () => loading$.next(true),
+    hideLoading: () => loading$.next(false),
+    loading$: loading$.asObservable(),
+  };
 
-  subject.subscribe((three) => console.log({ three }));
+  logicService.loading$.subscribe((status) => {
+    if (status) {
+      divLoading.classList.add('loading');
+    } else {
+      divLoading.classList.remove('loading');
+    }
+  });
 
-  subject.next('name');
+  logicService.showLoading();
 
-  subject.subscribe((four) => console.log({ four }));
-
-  subject.next('is');
-
-  subject.subscribe((five) => console.log({ five }));
-
-  subject.next('Will');
+  setTimeout(() => {
+    logicService.hideLoading();
+  }, 2000);
 };
