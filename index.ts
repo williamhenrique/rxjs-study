@@ -6,6 +6,7 @@ import distinct from './distinct';
 import flattening from './flattening-operators';
 import countDown from './count-down';
 import share from './share';
+import subject from './subject';
 
 console.clear();
 // observale();
@@ -15,4 +16,5 @@ console.clear();
 // distinct();
 // flattening();
 // countDown();
-share();
+// share();
+subject();
