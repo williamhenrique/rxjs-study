@@ -7,6 +7,7 @@ import flattening from './flattening-operators';
 import countDown from './count-down';
 import share from './share';
 import subject from './subject';
+import shareReplay from './share-replay';
 
 console.clear();
 // observale();
@@ -17,4 +18,5 @@ console.clear();
 // flattening();
 // countDown();
 // share();
-subject();
+// subject();
+shareReplay();
